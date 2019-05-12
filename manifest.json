@@ -1,0 +1,57 @@
+{
+  "manifest_version": 2,
+  "name": "TwoTwenty Local",
+  "version": "1.0.1",
+  "background": {
+    "scripts": [
+      "bundle/atest.js",
+      "bundle/punycode.js",
+      "bundle/util.js",
+      "background.js"
+    ],
+    "persistent": true
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.google.com/evaluation/*"],
+      "js": [
+        "bundle/atest.js",
+        "bundle/punycode.js",
+        "bundle/util.js",
+        "bundle/user.js",
+        "bundle/eventReactions.js",
+        "bundle/dom.js",
+        "bundle/gui.js",
+        "bundle/environment.js",
+        "app.js",
+        "flows/shared.js",
+        "flows/as.js",
+        "flows/gallery.js",
+        "flows/labels.js",
+        "flows/ratinghome.js",
+        "flows/snippets.js",
+        "flows/sitelinks.js",
+        "flows/pe.js",
+        "flows/unsupported.js"
+      ]
+    },
+    {
+      "matches": ["*://screenshot.googleplex.com/*"],
+      "js": ["plex.js"]
+    }
+  ],
+  "description": "Adds error checking and interface improvements to EWOQ",
+  "icons": {
+    "16": "icon16.png",
+    "128": "icon128.png"
+  },
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAi/DoEq1+tkaNNkgZFSVdlRGpXU37n3GuF+PnXkQ8m9jLteO7ENuGzT2DQiiWAsDiitUs2qvM52NP/CgWBWez3DErmOcuzBv2dWfI93QTIGNCkRUk3UUbDoh8oGxKpsBHmM51YxFBFXSHBytJ0lDpepOgFJfPrcTMtktRq5/bgYzwV1z5ZoMfOruOKw6eXA5GyeJ6Hfv2FpX1y9VCRN1zSeUIfjAYPF9qfc94uHG7wP+9crXMhyE9JtNfqKCgheMRHToEtMKddcZ8uTfkJ8myUmtUK8mx2DESeSr+Y5Gl40NaQWq0cNPxVsy4W7MXq2JyJ/9TMprOq5lLJX/QyEMRAwIDAQAB",
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": false
+  },
+  "permissions": [
+    "activeTab",
+    "storage"
+  ]
+}
